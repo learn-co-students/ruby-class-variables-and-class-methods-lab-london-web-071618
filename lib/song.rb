@@ -68,9 +68,26 @@ end
       @@genres.uniq
   end
   def self.genre_count
-    genre_count={}
-    @@genres.map { |e|  }
-
+hash_genre=Hash.new(0)
+hash_genre.tap do |hash|
+  @@genres.each do |genre| hash[genre]+=1
+  end
+end
+    # @genres.each_by do |genres|
+    #   if hash[genre]==nil
+    #     hash[genres]=1
+    #   else
+    #     hash[genre] +=1
+    #   end
+    # end
+    # hash
   end
 
+def self.artist_count
+  hash_artist = Hash.new(0)
+  hash_artist.tap do |hash|
+    @@artists.each do |artist| hash[artist] +=1
+    end
+  end
+end
 end
